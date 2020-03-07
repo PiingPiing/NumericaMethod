@@ -80,18 +80,20 @@ const routes: Routes = [
     component: EulersComponent
   },
   {
-    path:'heuns',
-    component:HeunsComponent
+    path: 'heuns',
+    component: HeunsComponent
   },
   {
-    path:'modified-eulers',
-    component:ModifiedEulersComponent
+    path: 'modified-eulers',
+    component: ModifiedEulersComponent
   }
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    useHash: true
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

@@ -1,1 +1,28 @@
-<p>bisection works!</p>
+<div class="form-group">
+  <label for="function">Function</label>
+  <input type="text" class="form-control" id="function" [(ngModel)]="input.func">
+</div>
+<div class="row">
+  <div class="col">
+    <div class="form-group">
+      <label for="xl">xl</label>
+      <input type="number" class="form-control" id="xl" [(ngModel)]="input.xl">
+    </div>
+
+  </div>
+  <div class="col">
+    <div class="form-group">
+      <label for="xr">xr</label>
+      <input type="number" class="form-control" id="xr" [(ngModel)]="input.xr">
+    </div>
+  </div>
+</div>
+<div>
+  <button class="btn btn-info" (click)="calculation()">Submit</button>
+</div>
+
+<div *ngFor="let item of iterations; let i = index">
+  <div>{{i+1}}</div>
+  <div>error : {{item.error}}</div>
+  <div>x : {{item.x}}</div>
+</div>
