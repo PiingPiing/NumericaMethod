@@ -10,6 +10,10 @@ public class Input {
 
     private Double x;
 
+    private Double x0;
+
+    private Double x1;
+
     private Double a;
 
     private Double b;
@@ -70,5 +74,21 @@ public class Input {
 
     public void setN(Integer n) {
         this.n = n;
+    }
+
+    public Double getX0() {
+        return x0;
+    }
+
+    public void setX0(Double x0) {
+        this.x0 = x0;
+    }
+
+    public Double getX1() {
+        return x1;
+    }
+
+    public void setX1(Double x1) {
+        this.x1 = x1;
     }
 }
