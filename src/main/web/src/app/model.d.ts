@@ -6,6 +6,7 @@ export interface Input {
   a?: number;
   b?: number;
   n?: number;
+  x0?: number;
 }
 
 export interface Iteration {

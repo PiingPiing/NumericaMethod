@@ -19,7 +19,7 @@ export class BisectionComponent implements OnInit {
   }
 
   calculation() {
-    this.http.post<Iteration[]>('api/bisection', this.input).subscribe(e => this.iterations = e);
+    this.http.post<Iteration[]>('api/root-of-equation/bisection', this.input).subscribe(e => this.iterations = e);
   }
 
 }
