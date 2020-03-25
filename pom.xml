@@ -71,4 +71,89 @@
         </repository>
     </repositories>
 
+    <profiles>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <spring.profiles.active>prod</spring.profiles.active>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                        <version>2.0.5.RELEASE</version>
+                        <configuration>
+                            <executable>true</executable>
+                            <addResources>true</addResources>
+                            <arguments>
+                                <argument>--spring.profiles.active=${spring.profiles.active}</argument>
+                            </arguments>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>repackage</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.6.0</version>
+                        <executions>
+                            <execution>
+                                <id>remove node_modules</id>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <phase>process-classes</phase>
+                                <configuration>
+                                    <executable>rm</executable>
+                                    <arguments>
+                                        <argument>-rf</argument>
+                                        <argument>node_modules</argument>
+                                    </arguments>
+                                    <workingDirectory>${project.basedir}/src/main/web</workingDirectory>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>npm install (process-classes)</id>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <phase>process-classes</phase>
+                                <configuration>
+                                    <executable>npm</executable>
+                                    <arguments>
+                                        <argument>install</argument>
+                                    </arguments>
+                                    <workingDirectory>${project.basedir}/src/main/web</workingDirectory>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>ng build</id>
+                                <goals>
+                                    <goal>exec</goal>
+                                </goals>
+                                <phase>process-classes</phase>
+                                <configuration>
+                                    <executable>node</executable>
+                                    <arguments>
+                                        <argument>--max_old_space_size=3048</argument>
+                                        <argument>./node_modules/.bin/ng</argument>
+                                        <argument>build</argument>
+                                        <argument>--prod</argument>
+                                    </arguments>
+                                    <workingDirectory>${project.basedir}/src/main/web</workingDirectory>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
 </project>
