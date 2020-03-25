@@ -4,14 +4,13 @@
 </div>
 
 
-<div class="row" *ngFor="let itemI of input.matrix; let i = index">
+<div class="row mt-1" *ngFor="let itemI of input.matrix; let i = index">
   <div class="col" *ngFor="let itemJ of itemI; let j = index">
     <input type="number" class="form-control" name="matrix{{i}}{{j}}" [(ngModel)]="input.matrix[i][j]">
   </div>
 </div>
 
-<div class="row">
-  <label for="function">vector</label>
+<div class="row mt-4">
   <div class="col" *ngFor="let item of input.vector; let i = index">
     <input type="number" class="form-control" name="x" [(ngModel)]="input.vector[i]">
   </div>

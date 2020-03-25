@@ -33,6 +33,10 @@ export class CramersRuleComponent implements OnInit {
     }
   }
 
+  setValue(n,i,j) {
+    this.input.matrix[i][j] = n;
+  }
+
   calculation() {
     this.http.post<number[]>('api/linear-algebra/cramers-rule', this.input).subscribe(e => this.output = e);
   }
