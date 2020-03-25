@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GaussQuadratureComponent } from './gauss-quadrature.component';
+import { SecantComponent } from './secant.component';
 
-describe('GaussQuadratureComponent', () => {
-  let component: GaussQuadratureComponent;
-  let fixture: ComponentFixture<GaussQuadratureComponent>;
+describe('SecantComponent', () => {
+  let component: SecantComponent;
+  let fixture: ComponentFixture<SecantComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GaussQuadratureComponent ]
+      declarations: [ SecantComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GaussQuadratureComponent);
+    fixture = TestBed.createComponent(SecantComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

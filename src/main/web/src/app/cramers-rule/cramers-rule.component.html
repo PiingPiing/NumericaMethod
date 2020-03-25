@@ -1,0 +1,28 @@
+<div class="form-group">
+  <label for="function">n x n</label>
+  <input type="number" class="form-control" id="function" [(ngModel)]="n" (ngModelChange)="set($event)">
+</div>
+
+
+<div class="row" *ngFor="let itemI of input.matrix; let i = index">
+  <div class="col" *ngFor="let itemJ of itemI; let j = index">
+    <input type="number" class="form-control" name="matrix{{i}}{{j}}" [(ngModel)]="input.matrix[i][j]">
+  </div>
+</div>
+
+<div class="row">
+  <label for="function">vector</label>
+  <div class="col" *ngFor="let item of input.vector; let i = index">
+    <input type="number" class="form-control" name="x" [(ngModel)]="input.vector[i]">
+  </div>
+</div>
+
+<div>
+  <button class="btn btn-info" (click)="calculation()">Submit</button>
+</div>
+
+<div *ngFor="let item of output; let i = index">
+  <hr/>
+  <div>x{{i+1}} : {{item}}</div>
+</div>
+

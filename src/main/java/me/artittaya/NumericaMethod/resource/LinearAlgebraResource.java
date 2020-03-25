@@ -55,7 +55,7 @@ public class LinearAlgebraResource {
 
         int n = A[0].length;
 
-        if (A[0][0] == 0) { //pivoting
+        if (A[0][0] == 0) {
             double[] tempRow = A[0];
             double tempColumn = B[0];
             A[0] = A[1];
@@ -63,7 +63,6 @@ public class LinearAlgebraResource {
             B[0] = B[1];
             B[1] = tempColumn;
         }
-//Forward eliminated
         for (int k = 0; k < n; k++) {
             for (int i = k + 1; i < n; i++) {
                 double factor = A[i][k] / A[k][k];
@@ -74,10 +73,10 @@ public class LinearAlgebraResource {
 
             }
         }
-//Backward Substitution
+
         double[] X = new double[n];
-        X[n - 1] = B[n - 1] / A[n - 1][n - 1]; //find Xn
-        for (int i = n - 2; i >= 0; i--) { //find Xn-1 to X1
+        X[n - 1] = B[n - 1] / A[n - 1][n - 1];
+        for (int i = n - 2; i >= 0; i--) {
             double sum = B[i];
             for (int j = i + 1; j < n; j++) {
                 sum = sum - A[i][j] * X[j];
@@ -105,7 +104,7 @@ public class LinearAlgebraResource {
 
         int n = A[0].length;
 
-        if (A[0][0] == 0) { //pivoting
+        if (A[0][0] == 0) {
             double[] tempRow = A[0];
             double tempColumn = B[0];
             A[0] = A[1];
@@ -124,11 +123,10 @@ public class LinearAlgebraResource {
 
             }
         }
-//Backward Substitution
         for (int k = n - 1; k >= 0; k--) {
             for (int i = k; i >= 0; i--) {
 
-                if (i == k) {//Identity matrix
+                if (i == k) {
                     double factor = 1 / A[i][k];
 
                     for (int j = 0; j < n; j++) {

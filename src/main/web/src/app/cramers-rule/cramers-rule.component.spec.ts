@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DerivativeH4Component } from './derivative-h4.component';
+import { CramersRuleComponent } from './cramers-rule.component';
 
-describe('DerivativeH4Component', () => {
-  let component: DerivativeH4Component;
-  let fixture: ComponentFixture<DerivativeH4Component>;
+describe('CramersRuleComponent', () => {
+  let component: CramersRuleComponent;
+  let fixture: ComponentFixture<CramersRuleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DerivativeH4Component ]
+      declarations: [ CramersRuleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DerivativeH4Component);
+    fixture = TestBed.createComponent(CramersRuleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

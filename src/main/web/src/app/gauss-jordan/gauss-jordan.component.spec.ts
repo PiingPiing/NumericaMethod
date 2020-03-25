@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DerivativeFwComponent } from './derivative-fw.component';
+import { GaussJordanComponent } from './gauss-jordan.component';
 
-describe('DerivativeFwComponent', () => {
-  let component: DerivativeFwComponent;
-  let fixture: ComponentFixture<DerivativeFwComponent>;
+describe('GaussJordanComponent', () => {
+  let component: GaussJordanComponent;
+  let fixture: ComponentFixture<GaussJordanComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DerivativeFwComponent ]
+      declarations: [ GaussJordanComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DerivativeFwComponent);
+    fixture = TestBed.createComponent(GaussJordanComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

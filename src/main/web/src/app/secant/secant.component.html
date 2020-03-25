@@ -1,0 +1,26 @@
+<div class="form-group">
+  <label for="function">Function</label>
+  <input type="text" class="form-control" id="function" [(ngModel)]="input.func">
+</div>
+
+<div class="form-group">
+  <label for="x0">x0</label>
+  <input type="number" class="form-control" id="x0" [(ngModel)]="input.x0">
+</div>
+
+<div class="form-group">
+  <label for="x1">x1</label>
+  <input type="number" class="form-control" id="x1" [(ngModel)]="input.x1">
+</div>
+
+<div>
+  <button class="btn btn-info" (click)="calculation()">Submit</button>
+</div>
+
+<div *ngFor="let item of iterations; let i = index">
+  <hr/>
+  <div>{{i+1}}</div>
+  <div>error : {{item.error}}</div>
+  <div>y : {{item.y}}</div>
+</div>
+

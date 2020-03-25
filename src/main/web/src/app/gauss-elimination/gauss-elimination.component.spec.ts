@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DerivativeH2Component } from './derivative-h2.component';
+import { GaussEliminationComponent } from './gauss-elimination.component';
 
-describe('DerivativeH2Component', () => {
-  let component: DerivativeH2Component;
-  let fixture: ComponentFixture<DerivativeH2Component>;
+describe('GaussEliminationComponent', () => {
+  let component: GaussEliminationComponent;
+  let fixture: ComponentFixture<GaussEliminationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DerivativeH2Component ]
+      declarations: [ GaussEliminationComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DerivativeH2Component);
+    fixture = TestBed.createComponent(GaussEliminationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

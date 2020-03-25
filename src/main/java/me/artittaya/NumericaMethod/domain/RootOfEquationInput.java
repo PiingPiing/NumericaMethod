@@ -1,6 +1,6 @@
 package me.artittaya.NumericaMethod.domain;
 
-public class Input {
+public class RootOfEquationInput {
 
     private String func;
 

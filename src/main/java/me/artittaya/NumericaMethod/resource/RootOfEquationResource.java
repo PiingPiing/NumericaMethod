@@ -1,6 +1,6 @@
 package me.artittaya.NumericaMethod.resource;
 
-import me.artittaya.NumericaMethod.domain.Input;
+import me.artittaya.NumericaMethod.domain.RootOfEquationInput;
 import me.artittaya.NumericaMethod.domain.Iteration;
 import net.objecthunter.exp4j.ExpressionBuilder;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +20,7 @@ public class RootOfEquationResource {
      * @return xl, xr, x, error
      */
     @PostMapping(value = "/bisection")
-    public List<Iteration> bisection(@RequestBody Input input) {
+    public List<Iteration> bisection(@RequestBody RootOfEquationInput input) {
         List<Iteration> data = new ArrayList<>();
 
         String fx = input.getFunc();
@@ -68,7 +68,7 @@ public class RootOfEquationResource {
      * @return xl, xr, x, error
      */
     @PostMapping(value = "/false-position")
-    public List<Iteration> falsePosition(@RequestBody Input input) {
+    public List<Iteration> falsePosition(@RequestBody RootOfEquationInput input) {
         List<Iteration> data = new ArrayList<>();
 
         String fx = input.getFunc();
@@ -118,7 +118,7 @@ public class RootOfEquationResource {
      * @return x, error
      */
     @PostMapping(value = "/newton-raphson")
-    public List<Iteration> newtonRaphson(@RequestBody Input input) {
+    public List<Iteration> newtonRaphson(@RequestBody RootOfEquationInput input) {
         List<Iteration> data = new ArrayList<>();
 
         String fx = input.getFunc();
@@ -146,7 +146,7 @@ public class RootOfEquationResource {
      * @return x, error
      */
     @PostMapping(value = "/one-point")
-    public List<Iteration> onepoint(@RequestBody Input input) {
+    public List<Iteration> onepoint(@RequestBody RootOfEquationInput input) {
         List<Iteration> data = new ArrayList<>();
 
         String fx = input.getFunc();
@@ -173,7 +173,7 @@ public class RootOfEquationResource {
      * @return y, error
      */
     @PostMapping(value = "/secant")
-    public List<Iteration> secant(@RequestBody Input input) {
+    public List<Iteration> secant(@RequestBody RootOfEquationInput input) {
         List<Iteration> data = new ArrayList<>();
 
         String fx = input.getFunc();
